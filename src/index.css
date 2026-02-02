@@ -1,0 +1,145 @@
+/* Google Fonts - Must be first */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* ==========================================
+   NEXVEL Design System 3.0 - COSMIC MINIMALIST
+   ========================================== */
+
+:root {
+  /* Light/White Theme Palette */
+  --color-void: #FFFFFF;
+  /* Main Background - Pure White */
+  --color-star: #000000;
+  /* Primary Text - Pure Black */
+  --color-dust: #555555;
+  /* Secondary Text - Dark Gray */
+  --color-accent: #2563EB;
+  /* Royal Blue - Interactions */
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-tech: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-tech: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-void: #FFFFFF;
+  --color-star: #000000;
+  --color-dust: #555555;
+}
+
+/* Base Reset & Styles */
+body {
+  background-color: var(--color-void);
+  color: var(--color-star);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from animations */
+}
+
+/* Typography Utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Animation Classes */
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
+    color: transparent;
+  }
+
+  .text-outline-hover:hover {
+    -webkit-text-stroke: 0px;
+    color: black;
+  }
+
+  /* Hide Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .animate-float-1 {
+    animation: float-1 20s infinite ease-in-out;
+  }
+
+  .animate-float-2 {
+    animation: float-2 25s infinite ease-in-out reverse;
+  }
+
+  .animate-float-3 {
+    animation: float-3 22s infinite ease-in-out;
+  }
+
+  @keyframes float-1 {
+
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    33% {
+      transform: translate(100px, -50px) rotate(10deg) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-50px, 50px) rotate(-5deg) scale(0.9);
+    }
+  }
+
+  @keyframes float-2 {
+
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    33% {
+      transform: translate(-70px, 80px) rotate(-10deg) scale(1.2);
+    }
+
+    66% {
+      transform: translate(50px, -60px) rotate(15deg) scale(0.85);
+    }
+  }
+
+  @keyframes float-3 {
+
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    50% {
+      transform: translate(80px, 40px) rotate(20deg) scale(1.1);
+    }
+  }
+}
+
+/* Custom Cursor (Optional - maybe later) */
+/* selection */
+::selection {
+  background-color: var(--color-star);
+  color: var(--color-void);
+}
