@@ -17,7 +17,7 @@
   /* Primary Text - Pure Black */
   --color-dust: #555555;
   /* Secondary Text - Dark Gray */
-  --color-accent: #2563EB;
+  --color-accent: #000000;
   /* Royal Blue - Interactions */
 
   /* Typography */
@@ -34,6 +34,7 @@
   --color-void: #FFFFFF;
   --color-star: #000000;
   --color-dust: #555555;
+  --color-accent: #000000;
 }
 
 /* Base Reset & Styles */

@@ -5,14 +5,7 @@ import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
 
 // Categories Data - Updated with new requests
-const categories = [
-    { id: '1', name: 'Hoodies', image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800', slug: 'hoodies' },
-    { id: '2', name: 'T-Shirts', image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800', slug: 'tshirts' },
-    { id: '3', name: 'Pants', image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800', slug: 'pants' },
-    { id: '4', name: 'Shorts', image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800', slug: 'shorts' },
-    { id: '5', name: 'Shirts', image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=800', slug: 'shirts' },
-    { id: '6', name: 'Accs', image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800', slug: 'accessories' },
-];
+// Categories removed
 
 function Home() {
     const scrollContainerRef = useRef(null);
@@ -72,43 +65,8 @@ function Home() {
                 <div className="absolute bottom-0 w-full h-96 bg-gradient-to-t from-void via-void/60 to-transparent pointer-events-none z-20" />
             </section>
 
-            {/* 2. Categories - "Shop By Category" */}
-            <section className="py-24 relative z-10">
-                <div className="px-6 mb-12 flex items-end justify-between">
-                    <h2 className="font-display text-3xl md:text-4xl">
-                        Shop By<br /><span className="text-dust">Category</span>
-                    </h2>
-                    <span className="font-tech text-xs text-dust hidden md:block">SCROLL TO EXPLORE →</span>
-                </div>
+            {/* 2. Categories Section Removed as per user request */}
 
-                <div
-                    ref={scrollContainerRef}
-                    className="flex gap-8 overflow-x-auto px-6 pb-12 no-scrollbar cursor-grab active:cursor-grabbing"
-                >
-                    {categories.map((cat, index) => (
-                        <Link
-                            key={cat.id}
-                            to={`/shop/${cat.slug}`}
-                            className="flex-shrink-0 group relative w-[280px] h-[400px] overflow-hidden rounded-none shadow-lg hover:shadow-2xl transition-all duration-500"
-                        >
-                            <img
-                                src={cat.image}
-                                alt={cat.name}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                            />
-
-                            <div className="absolute bottom-0 left-0 p-6 z-10">
-                                <span className="font-display text-4xl text-transparent stroke-star text-outline group-hover:text-star transition-all duration-300">
-                                    0{index + 1}
-                                </span>
-                                <h3 className="font-display text-2xl uppercase mt-2 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 text-star drop-shadow-md bg-white/80 px-2 backdrop-blur-sm">
-                                    {cat.name}
-                                </h3>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            </section>
 
             {/* 3. Product Grid - "New Arrivals" */}
             <section className="px-6 pb-32 max-w-[1920px] mx-auto">

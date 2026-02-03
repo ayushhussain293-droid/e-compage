@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { products } from '../data/products';
+import { useCart } from '../context/CartContext';
 
 function ProductDetail() {
     const { slug } = useParams();
+    const { addToCart } = useCart();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -85,8 +87,8 @@ function ProductDetail() {
                                             key={size}
                                             onClick={() => setSelectedSize(size)}
                                             className={`aspect-square flex items-center justify-center font-tech text-sm border transition-all ${selectedSize === size
-                                                    ? 'border-star bg-star text-void'
-                                                    : 'border-star/20 text-dust hover:border-star/50'
+                                                ? 'border-star bg-star text-void'
+                                                : 'border-star/20 text-dust hover:border-star/50'
                                                 }`}
                                         >
                                             {size}
@@ -98,7 +100,17 @@ function ProductDetail() {
 
                         {/* Actions */}
                         <div className="flex gap-4">
-                            <button className="flex-1 bg-accent text-white h-14 font-tech uppercase tracking-widest text-sm font-bold hover:bg-star hover:text-void transition-colors duration-300">
+                            <button
+                                onClick={() => {
+                                    if (!selectedSize) {
+                                        alert('Please select a size'); // Simple validation
+                                        return;
+                                    }
+                                    addToCart(product, selectedSize, product.colors?.[0] || 'Black');
+                                    alert('Added to cart!');
+                                }}
+                                className="flex-1 bg-accent text-white h-14 font-tech uppercase tracking-widest text-sm font-bold hover:bg-star hover:text-void transition-colors duration-300"
+                            >
                                 Add to Cart
                             </button>
                             <button

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
@@ -14,28 +15,32 @@ import Legal from './pages/Legal';
 import Account from './pages/Account';
 
 import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="shop" element={<Shop />} />
-            <Route path="shop/:category" element={<Shop />} />
-            <Route path="product/:slug" element={<ProductDetail />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="about" element={<About />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="shipping" element={<Shipping />} />
-            <Route path="size-guide" element={<SizeGuide />} />
-            <Route path="legal" element={<Legal />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Router>
+      <CartProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="shop" element={<Shop />} />
+              <Route path="shop/:category" element={<Shop />} />
+              <Route path="product/:slug" element={<ProductDetail />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
+              <Route path="about" element={<About />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="shipping" element={<Shipping />} />
+              <Route path="size-guide" element={<SizeGuide />} />
+              <Route path="legal" element={<Legal />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Router>
+      </CartProvider>
     </AuthProvider>
   );
 }
