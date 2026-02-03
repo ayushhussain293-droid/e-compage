@@ -54,9 +54,9 @@ function Home() {
                     <p className="font-tech text-xs md:text-sm uppercase tracking-[0.5em] text-gray-200 mb-6 animate-fade-in-up">
                         Season 2026
                     </p>
-                    <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold uppercase leading-[0.8] mb-8 text-white drop-shadow-2xl">
+                    <h1 className="font-display text-5xl md:text-8xl lg:text-9xl font-bold uppercase leading-[0.85] mb-8 text-white drop-shadow-2xl">
                         New<br />
-                        <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '2px white' }}>Collection</span>
+                        <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '1px white' }}>Collection</span>
                     </h1>
 
                     <Link

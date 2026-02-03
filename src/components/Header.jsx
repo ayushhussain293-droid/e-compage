@@ -127,7 +127,7 @@ function Header() {
                             <Link
                                 key={item.name}
                                 to={item.path}
-                                className={`font-display text-5xl md:text-6xl text-white hover:text-accent hover:italic transition-all duration-300 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                                className={`font-display text-4xl md:text-6xl text-white hover:text-accent hover:italic transition-all duration-300 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                                 style={{ transitionDelay: `${index * 100}ms` }}
                                 onClick={() => setIsMenuOpen(false)}
                             >
